@@ -45,10 +45,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -121,9 +129,36 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KhachHangsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009230853041_Create_Database.cs" />
+    <Compile Include="Migrations\202009230853041_Create_Database.Designer.cs">
+      <DependentUpon>202009230853041_Create_Database.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009250404552_addkey.cs" />
+    <Compile Include="Migrations\202009250404552_addkey.Designer.cs">
+      <DependentUpon>202009250404552_addkey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009250413512_addkey2.cs" />
+    <Compile Include="Migrations\202009250413512_addkey2.Designer.cs">
+      <DependentUpon>202009250413512_addkey2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009250417594_addkey3.cs" />
+    <Compile Include="Migrations\202009250417594_addkey3.Designer.cs">
+      <DependentUpon>202009250417594_addkey3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ChiTietHoaDon.cs" />
+    <Compile Include="Models\DanhMuc.cs" />
+    <Compile Include="Models\Gia.cs" />
+    <Compile Include="Models\HoaDon.cs" />
+    <Compile Include="Models\KhachHang.cs" />
+    <Compile Include="Models\LTQLDBContext.cs" />
+    <Compile Include="Models\NhaCungCap.cs" />
+    <Compile Include="Models\SanPham.cs" />
+    <Compile Include="Models\ThuongHieu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -162,10 +197,14 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\KhachHangs\Create.cshtml" />
+    <Content Include="Views\KhachHangs\Delete.cshtml" />
+    <Content Include="Views\KhachHangs\Details.cshtml" />
+    <Content Include="Views\KhachHangs\Edit.cshtml" />
+    <Content Include="Views\KhachHangs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -179,6 +218,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202009230853041_Create_Database.resx">
+      <DependentUpon>202009230853041_Create_Database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009250404552_addkey.resx">
+      <DependentUpon>202009250404552_addkey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009250413512_addkey2.resx">
+      <DependentUpon>202009250413512_addkey2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009250417594_addkey3.resx">
+      <DependentUpon>202009250417594_addkey3.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
