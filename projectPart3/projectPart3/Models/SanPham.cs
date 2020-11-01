@@ -7,29 +7,29 @@ using System.Web;
 
 namespace projectPart3.Models
 {
-    [Table("SanPhams")]
+    [Table("sanphams")]
     public class SanPham
     {
         [Key]
-        public int Ma_SP { get; set; }
-        public int Ma_Gia { get; set; }
+        public int ma_sp { get; set; }
+        public int ma_gia { get; set; }
 
-        [ForeignKey("Ma_Gia")]
-        public virtual Gia Gias { get; set; }
-        public int Ma_NCC { get; set; }
+        [ForeignKey("ma_gia")]
+        public virtual Gia gias { get; set; }
+        public int ma_ncc { get; set; }
 
-        [ForeignKey("Ma_NCC")]
-        public virtual NhaCungCap NhaCungCaps { get; set; }
-        public int Ma_Danh_Muc { get; set; }
+        [ForeignKey("ma_ncc")]
+        public virtual NhaCungCap nhacungcaps { get; set; }
+        public int ma_danh_muc { get; set; }
 
-        [ForeignKey("Ma_Danh_Muc")]
-        public virtual DanhMuc DanhMucs { get; set; }
-        public int Trang_Thai { get; set; }
-        public string Ghi_Chu { get; set; }
-        public string Xuat_Xu { get; set; }
-        public string Mo_Ta { get; set; }
-        public string Hinh_Anh { get; set; }
-        public DateTime Ngay_Tao { get; set; }
+        [ForeignKey("ma_danh_muc")]
+        public virtual DanhMuc danhmucs { get; set; }
+        public int trang_thai { get; set; }
+        public string ghi_chu { get; set; }
+        public string xuat_xu { get; set; }
+        public string mo_ta { get; set; }
+        public string hinh_anh { get; set; }
+        public DateTime ngay_tao { get; set; }
 
     }
 }

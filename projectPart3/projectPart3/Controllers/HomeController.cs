@@ -26,5 +26,29 @@ namespace projectPart3.Controllers
 
             return View();
         }
+        public ActionResult ShowProduct()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
+        public ActionResult Detail()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult Cart()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult Checkout()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
     }
 }

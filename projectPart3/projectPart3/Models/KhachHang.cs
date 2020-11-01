@@ -3,18 +3,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace projectPart3.Models
 {
-    [Table("KhachHangs")]
+    [Table("khachhangs")]
     public class KhachHang
     {
         [Key]
-        public int Ma_Khach_Hang { get; set; }
+        public int ma_khach_hang { get; set; }
         
-        public string Ten_Khach_Hang { get; set; }
-        public int Gioi_Tinh { get; set; }
-        public string Email { get; set; }
-        public string Dien_Thoai { get; set; }
+        public string ten_khach_hang { get; set; }
+        public int gioi_tinh { get; set; }
+        public string email { get; set; }
+        public string password { get; set; }
+        public string dien_thoai { get; set; }
 
         [StringLength(255)]
-        public string Dia_Chi { get; set; }
+        public string dia_chi { get; set; }
     }
 }

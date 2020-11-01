@@ -7,23 +7,23 @@ using System.Web;
 
 namespace projectPart3.Models
 {
-    [Table("ChiTietHoaDons")]
+    [Table("chitiethoadons")]
     public class ChiTietHoaDon
     {
         [Key]
-        public int Ma_HD_Chi_Tiet { get; set; }
-        public int Ma_HD { get; set; }
+        public int ma_hd_chi_tiet { get; set; }
+        public int ma_hd { get; set; }
 
-        [ForeignKey("Ma_HD")]
-        public virtual HoaDon HoaDons { get; set; }
-        public int Ma_San_Pham { get; set; }
+        [ForeignKey("ma_hd")]
+        public virtual HoaDon hoadons { get; set; }
+        public int ma_san_pham { get; set; }
 
-        [ForeignKey("Ma_San_Pham")]
-        public virtual SanPham SanPhams { get; set; }
-        public int So_Luong { get; set; }
-        public int Gia_Goc { get; set; }
-        public int Gia_Khuyen_Mai { get; set; }
-        public DateTime Ngay_Tao { get; set; }
+        [ForeignKey("ma_san_pham")]
+        public virtual SanPham sanphams { get; set; }
+        public int so_luong { get; set; }
+        public int gia_goc { get; set; }
+        public int gia_khuyen_mai { get; set; }
+        public DateTime ngay_tao { get; set; }
 
     }
 }

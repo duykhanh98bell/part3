@@ -8,18 +8,18 @@ using System.Web.UI.WebControls;
 
 namespace projectPart3.Models
 {
-    [Table("HoaDons")]
+    [Table("hoadons")]
     public class HoaDon
     {
         [Key]
-        public int Ma_HD { get; set; }
-        public int Ma_KH { get; set;  }
-        public int Tong_Tien { get; set; }
-        public int Trang_Thai { get; set; }
-        public string Ghi_Chu { get; set; }
-        public DateTime Ngay_Tao { get; set; }
+        public int ma_hd { get; set; }
+        public int ma_kh { get; set;  }
+        public int tong_tien { get; set; }
+        public int trang_thai { get; set; }
+        public string ghi_chu { get; set; }
+        public DateTime ngay_tao { get; set; }
 
-        [ForeignKey("Ma_KH")]
-        public virtual KhachHang KhachHangs { get; set; }
+        [ForeignKey("ma_kh")]
+        public virtual KhachHang khachhangs { get; set; }
     }
 }

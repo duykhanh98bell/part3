@@ -7,11 +7,11 @@ using System.Web;
 
 namespace projectPart3.Models
 {
-    [Table("ThuongHieus")]
+    [Table("thuonghieus")]
     public class ThuongHieu
     {
         [Key]
-        public int Ma_Thuong_Hieu { get; set; }
-        public string Ten_Thuong_Hieu { get; set; }
+        public int ma_thuong_hieu { get; set; }
+        public string ten_thuong_hieu { get; set; }
     }
 }

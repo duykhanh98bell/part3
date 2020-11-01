@@ -129,27 +129,15 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\KhachHangsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202009230853041_Create_Database.cs" />
-    <Compile Include="Migrations\202009230853041_Create_Database.Designer.cs">
-      <DependentUpon>202009230853041_Create_Database.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009250404552_addkey.cs" />
-    <Compile Include="Migrations\202009250404552_addkey.Designer.cs">
-      <DependentUpon>202009250404552_addkey.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009250413512_addkey2.cs" />
-    <Compile Include="Migrations\202009250413512_addkey2.Designer.cs">
-      <DependentUpon>202009250413512_addkey2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009250417594_addkey3.cs" />
-    <Compile Include="Migrations\202009250417594_addkey3.Designer.cs">
-      <DependentUpon>202009250417594_addkey3.cs</DependentUpon>
+    <Compile Include="Migrations\202011010426514_updateadmin.cs" />
+    <Compile Include="Migrations\202011010426514_updateadmin.Designer.cs">
+      <DependentUpon>202011010426514_updateadmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\ChiTietHoaDon.cs" />
     <Compile Include="Models\DanhMuc.cs" />
     <Compile Include="Models\Gia.cs" />
@@ -314,11 +302,14 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\KhachHangs\Create.cshtml" />
-    <Content Include="Views\KhachHangs\Delete.cshtml" />
-    <Content Include="Views\KhachHangs\Details.cshtml" />
-    <Content Include="Views\KhachHangs\Edit.cshtml" />
-    <Content Include="Views\KhachHangs\Index.cshtml" />
+    <Content Include="Views\Home\Detail.cshtml" />
+    <Content Include="Views\Home\Cart.cshtml" />
+    <Content Include="Views\Home\Checkout.cshtml" />
+    <Content Include="Views\Shared\Header.cshtml" />
+    <Content Include="Views\Shared\Footer.cshtml" />
+    <Content Include="Views\Shared\Banner.cshtml" />
+    <Content Include="Views\Shared\LeftMenu.cshtml" />
+    <Content Include="Views\Home\ShowProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -337,17 +328,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202009230853041_Create_Database.resx">
-      <DependentUpon>202009230853041_Create_Database.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009250404552_addkey.resx">
-      <DependentUpon>202009250404552_addkey.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009250413512_addkey2.resx">
-      <DependentUpon>202009250413512_addkey2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009250417594_addkey3.resx">
-      <DependentUpon>202009250417594_addkey3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011010426514_updateadmin.resx">
+      <DependentUpon>202011010426514_updateadmin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -7,12 +7,12 @@ using System.Web;
 
 namespace projectPart3.Models
 {
-    [Table("NhaCungCaps")]
+    [Table("nhacungcaps")]
     public class NhaCungCap
     {
         [Key]
-        public int MaNhaCungCap { get; set; }
-        public string TenNhaCungCap { get; set; }
-        public string DiaChi { get; set; }
+        public int ma_nha_cung_cap { get; set; }
+        public string ten_nha_cung_cap { get; set; }
+        public string dia_chi { get; set; }
     }
 }
