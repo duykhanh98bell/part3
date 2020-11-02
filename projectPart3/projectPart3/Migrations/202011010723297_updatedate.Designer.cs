@@ -7,13 +7,13 @@ namespace projectPart3.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class updateadmin : IMigrationMetadata
+    public sealed partial class updatedate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(updateadmin));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(updatedate));
         
         string IMigrationMetadata.Id
         {
-            get { return "202011010426514_updateadmin"; }
+            get { return "202011010723297_updatedate"; }
         }
         
         string IMigrationMetadata.Source

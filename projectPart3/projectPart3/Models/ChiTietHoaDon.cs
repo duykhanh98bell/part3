@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NPoco.Expressions;
+using OfficeOpenXml.FormulaParsing.Excel.Functions.Information;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -23,7 +25,7 @@ namespace projectPart3.Models
         public int so_luong { get; set; }
         public int gia_goc { get; set; }
         public int gia_khuyen_mai { get; set; }
-        public DateTime ngay_tao { get; set; }
+
 
     }
 }

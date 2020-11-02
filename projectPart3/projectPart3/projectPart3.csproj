@@ -51,7 +51,14 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="EPPlus.Core, Version=1.5.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Core.1.5.4\lib\net46\EPPlus.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NPoco, Version=4.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPoco.4.0.3\lib\net45\NPoco.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -128,13 +135,18 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DanhMucsController.cs" />
+    <Compile Include="Controllers\GiasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NhaCungCapsController.cs" />
+    <Compile Include="Controllers\SanPhamsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202011010426514_updateadmin.cs" />
-    <Compile Include="Migrations\202011010426514_updateadmin.Designer.cs">
-      <DependentUpon>202011010426514_updateadmin.cs</DependentUpon>
+    <Compile Include="Migrations\202011010723297_updatedate.cs" />
+    <Compile Include="Migrations\202011010723297_updatedate.Designer.cs">
+      <DependentUpon>202011010723297_updatedate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -146,6 +158,7 @@
     <Compile Include="Models\LTQLDBContext.cs" />
     <Compile Include="Models\NhaCungCap.cs" />
     <Compile Include="Models\SanPham.cs" />
+    <Compile Include="Models\Suggestion.cs" />
     <Compile Include="Models\ThuongHieu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -237,6 +250,11 @@
     <Content Include="Content\js\main.js" />
     <Content Include="Content\js\mixitup.min.js" />
     <Content Include="Content\js\owl.carousel.min.js" />
+    <Content Include="Content\loginCSS\css\font-awesome.css" />
+    <Content Include="Content\loginCSS\css\style.css" />
+    <Content Include="Content\loginCSS\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\loginCSS\images\3.png" />
+    <Content Include="Content\loginCSS\images\bg.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -277,6 +295,13 @@
     <Content Include="Content\Source\OwlCarousel2-2.3.4.zip" />
     <Content Include="Content\Source\sass.zip" />
     <Content Include="Content\Source\SlickNav-master.zip" />
+    <Content Include="Content\loginCSS\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\loginCSS\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\loginCSS\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\loginCSS\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\loginCSS\fonts\FontAwesome.otf" />
+    <Content Include="Content\loginCSS\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\loginCSS\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -301,18 +326,46 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Detail.cshtml" />
     <Content Include="Views\Home\Cart.cshtml" />
     <Content Include="Views\Home\Checkout.cshtml" />
-    <Content Include="Views\Shared\Header.cshtml" />
-    <Content Include="Views\Shared\Footer.cshtml" />
-    <Content Include="Views\Shared\Banner.cshtml" />
-    <Content Include="Views\Shared\LeftMenu.cshtml" />
     <Content Include="Views\Home\ShowProduct.cshtml" />
+    <Content Include="Views\NhaCungCaps\Create.cshtml" />
+    <Content Include="Views\NhaCungCaps\Delete.cshtml" />
+    <Content Include="Views\NhaCungCaps\Details.cshtml" />
+    <Content Include="Views\NhaCungCaps\Edit.cshtml" />
+    <Content Include="Views\NhaCungCaps\Index.cshtml" />
+    <Content Include="Views\DanhMucs\Create.cshtml" />
+    <Content Include="Views\DanhMucs\Delete.cshtml" />
+    <Content Include="Views\DanhMucs\Details.cshtml" />
+    <Content Include="Views\DanhMucs\Edit.cshtml" />
+    <Content Include="Views\DanhMucs\Index.cshtml" />
+    <Content Include="Views\Gias\Create.cshtml" />
+    <Content Include="Views\Gias\Delete.cshtml" />
+    <Content Include="Views\Gias\Details.cshtml" />
+    <Content Include="Views\Gias\Edit.cshtml" />
+    <Content Include="Views\Gias\Index.cshtml" />
+    <Content Include="Views\SanPhams\Create.cshtml" />
+    <Content Include="Views\SanPhams\Delete.cshtml" />
+    <Content Include="Views\SanPhams\Details.cshtml" />
+    <Content Include="Views\SanPhams\Edit.cshtml" />
+    <Content Include="Views\SanPhams\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutClient.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Hero.cshtml" />
+    <Content Include="Views\Shared\Header.cshtml" />
+    <Content Include="Views\Shared\Banner.cshtml" />
+    <Content Include="Views\Shared\Footer.cshtml" />
+    <Content Include="Views\Shared\LeftMenu.cshtml" />
+    <Content Include="Views\Shared\_LayoutClientShop.cshtml" />
+    <Content Include="Views\Shared\_LayoutLogin.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\success.cshtml" />
+    <Content Include="Views\Account\Error.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -328,8 +381,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202011010426514_updateadmin.resx">
-      <DependentUpon>202011010426514_updateadmin.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011010723297_updatedate.resx">
+      <DependentUpon>202011010723297_updatedate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

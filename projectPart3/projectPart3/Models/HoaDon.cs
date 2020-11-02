@@ -17,6 +17,7 @@ namespace projectPart3.Models
         public int tong_tien { get; set; }
         public int trang_thai { get; set; }
         public string ghi_chu { get; set; }
+        [DataType(DataType.Date)]
         public DateTime ngay_tao { get; set; }
 
         [ForeignKey("ma_kh")]

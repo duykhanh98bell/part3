@@ -14,6 +14,8 @@ namespace projectPart3.Models
         public int ma_gia { get; set; }
         public int gia_goc { get; set; }
         public int gia_khuyen_mai { get; set; }
+
+        [DataType(DataType.Date)]
         public DateTime ngay_ap_dung { get; set; }
     }
 }

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<projectPart3.Models.SanPham>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Tên danh mục
+        </th>
+        <th>
+            Mã giá
+        </th>
+        <th>
+            Tên nhà cung cấp
+        </th>
+        <th>
+            Trạng thái
+        </th>
+        <th>
+            Ghi chú
+        </th>
+        <th>
+            Xuất xứ
+        </th>
+        <th>
+            Mô tả
+        </th>
+        <th>
+            Hình ảnh
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.danhmucs.ten_danh_muc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gias.ma_gia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nhacungcaps.ten_nha_cung_cap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.trang_thai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ghi_chu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.xuat_xu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mo_ta)
+        </td>
+        <td>
+            <img src="@Html.DisplayFor(modelItem => item.hinh_anh)" alt="Image" height="50" width="50" />
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ma_sp }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ma_sp }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ma_sp })
+        </td>
+    </tr>
+}
+
+</table>

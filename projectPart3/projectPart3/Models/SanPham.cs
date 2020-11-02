@@ -12,24 +12,23 @@ namespace projectPart3.Models
     {
         [Key]
         public int ma_sp { get; set; }
-        public int ma_gia { get; set; }
 
+        public int ma_gia { get; set; }
         [ForeignKey("ma_gia")]
         public virtual Gia gias { get; set; }
-        public int ma_ncc { get; set; }
 
+        public int ma_ncc { get; set; }
         [ForeignKey("ma_ncc")]
         public virtual NhaCungCap nhacungcaps { get; set; }
-        public int ma_danh_muc { get; set; }
 
+        public int ma_danh_muc { get; set; }
         [ForeignKey("ma_danh_muc")]
         public virtual DanhMuc danhmucs { get; set; }
-        public int trang_thai { get; set; }
+        public bool trang_thai { get; set; }
         public string ghi_chu { get; set; }
         public string xuat_xu { get; set; }
         public string mo_ta { get; set; }
         public string hinh_anh { get; set; }
-        public DateTime ngay_tao { get; set; }
 
     }
 }
