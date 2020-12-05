@@ -111,19 +111,18 @@
                     <ul>
                         <li>@Html.ActionLink("Home", "Index", "Home")</li>
                         <li class="active">@Html.ActionLink("Shop", "ShowProduct", "Home")</li>
-                        <li>@Html.ActionLink("Detail", "Detail", "Home")</li>
-                        <li>@Html.ActionLink("Cart", "Cart", "Home")</li>
-                        <li>@Html.ActionLink("Checkout", "Checkout", "Home")</li>
+                        @*<li>@Html.ActionLink("Detail", "Detail/4", "Home")</li> *@
+                        <li>@Html.ActionLink("Cart", "showToCart", "Cart")</li>
+                        <li>@Html.ActionLink("Checkout", "showCheckout", "Cart")</li>
                     </ul>
                 </nav>
             </div>
             <div class="col-lg-3">
                 <div class="header__cart">
                     <ul>
-                        <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                        <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                        <li><a href="/Cart/ShowToCart"><i class="fa fa-shopping-bag"></i> @Html.Action("bagCart", "Cart") </a></li>
                     </ul>
-                    <div class="header__cart__price">item: <span>$150.00</span></div>
+                    @*<div class="header__cart__price">item: <span>$150.00</span></div>*@
                 </div>
             </div>
         </div>

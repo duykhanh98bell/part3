@@ -2,10 +2,10 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Index</h2>
+@ViewBag.Message
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -13,64 +13,72 @@
 <table class="table">
     <tr>
         <th>
-            Tên danh mục
+            @Html.DisplayNameFor(model => model.danhmucs.ten_danh_muc)
         </th>
         <th>
-            Mã giá
+            @Html.DisplayNameFor(model => model.gias.gia_khuyen_mai)
         </th>
         <th>
-            Tên nhà cung cấp
+            @Html.DisplayNameFor(model => model.nhacungcaps.ten_nha_cung_cap)
         </th>
         <th>
-            Trạng thái
+            @Html.DisplayNameFor(model => model.ten_sp)
         </th>
         <th>
-            Ghi chú
+            @Html.DisplayNameFor(model => model.trang_thai)
         </th>
         <th>
-            Xuất xứ
+            @Html.DisplayNameFor(model => model.ghi_chu)
         </th>
         <th>
-            Mô tả
+            @Html.DisplayNameFor(model => model.xuat_xu)
         </th>
         <th>
-            Hình ảnh
+            @Html.DisplayNameFor(model => model.mo_ta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hinh_anh)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.danhmucs.ten_danh_muc)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.gias.ma_gia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nhacungcaps.ten_nha_cung_cap)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.trang_thai)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ghi_chu)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.xuat_xu)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.mo_ta)
-        </td>
-        <td>
-            <img src="@Html.DisplayFor(modelItem => item.hinh_anh)" alt="Image" height="50" width="50" />
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ma_sp }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ma_sp }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ma_sp })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.danhmucs.ten_danh_muc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gias.gia_khuyen_mai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nhacungcaps.ten_nha_cung_cap)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ten_sp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.trang_thai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ghi_chu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.xuat_xu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mo_ta)
+            </td>
+            <td>
+                <img src="@Url.Content(item.hinh_anh)" width="50" />
+
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ma_sp }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ma_sp }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ma_sp })
+            </td>
+        </tr>
+    }
 
 </table>

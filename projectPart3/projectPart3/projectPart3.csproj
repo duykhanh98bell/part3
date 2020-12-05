@@ -136,6 +136,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\DanhMucsController.cs" />
     <Compile Include="Controllers\GiasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -144,12 +145,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202011010723297_updatedate.cs" />
-    <Compile Include="Migrations\202011010723297_updatedate.Designer.cs">
-      <DependentUpon>202011010723297_updatedate.cs</DependentUpon>
+    <Compile Include="Migrations\202011221104281_update ten.cs" />
+    <Compile Include="Migrations\202011221104281_update ten.Designer.cs">
+      <DependentUpon>202011221104281_update ten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011271602273_ok.cs" />
+    <Compile Include="Migrations\202011271602273_ok.Designer.cs">
+      <DependentUpon>202011271602273_ok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012031039155_update.cs" />
+    <Compile Include="Migrations\202012031039155_update.Designer.cs">
+      <DependentUpon>202012031039155_update.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\ChiTietHoaDon.cs" />
     <Compile Include="Models\DanhMuc.cs" />
     <Compile Include="Models\Gia.cs" />
@@ -345,11 +355,6 @@
     <Content Include="Views\Gias\Details.cshtml" />
     <Content Include="Views\Gias\Edit.cshtml" />
     <Content Include="Views\Gias\Index.cshtml" />
-    <Content Include="Views\SanPhams\Create.cshtml" />
-    <Content Include="Views\SanPhams\Delete.cshtml" />
-    <Content Include="Views\SanPhams\Details.cshtml" />
-    <Content Include="Views\SanPhams\Edit.cshtml" />
-    <Content Include="Views\SanPhams\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutClient.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Hero.cshtml" />
@@ -362,6 +367,16 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\success.cshtml" />
     <Content Include="Views\Account\Error.cshtml" />
+    <Content Include="Views\SanPhams\Create.cshtml" />
+    <Content Include="Views\SanPhams\Delete.cshtml" />
+    <Content Include="Views\SanPhams\Details.cshtml" />
+    <Content Include="Views\SanPhams\Edit.cshtml" />
+    <Content Include="Views\SanPhams\Index.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Cart\showToCart.cshtml" />
+    <Content Include="Views\Cart\bagCart.cshtml" />
+    <Content Include="Views\Cart\showCheckout.cshtml" />
+    <Content Include="Views\Cart\shoping_success.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -381,8 +396,14 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202011010723297_updatedate.resx">
-      <DependentUpon>202011010723297_updatedate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011221104281_update ten.resx">
+      <DependentUpon>202011221104281_update ten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011271602273_ok.resx">
+      <DependentUpon>202011271602273_ok.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012031039155_update.resx">
+      <DependentUpon>202012031039155_update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

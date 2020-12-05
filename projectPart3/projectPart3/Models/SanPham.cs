@@ -12,8 +12,10 @@ namespace projectPart3.Models
     {
         [Key]
         public int ma_sp { get; set; }
+        public string ten_sp { get; set; }
 
         public int ma_gia { get; set; }
+        
         [ForeignKey("ma_gia")]
         public virtual Gia gias { get; set; }
 
@@ -26,6 +28,12 @@ namespace projectPart3.Models
         public virtual DanhMuc danhmucs { get; set; }
         public bool trang_thai { get; set; }
         public string ghi_chu { get; set; }
+
+        internal object Find(int ma_san_pham)
+        {
+            throw new NotImplementedException();
+        }
+
         public string xuat_xu { get; set; }
         public string mo_ta { get; set; }
         public string hinh_anh { get; set; }

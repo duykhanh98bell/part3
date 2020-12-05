@@ -10,6 +10,7 @@ using System.Web;
 namespace projectPart3.Models
 {
     [Table("chitiethoadons")]
+    [Serializable]
     public class ChiTietHoaDon
     {
         [Key]
@@ -23,9 +24,5 @@ namespace projectPart3.Models
         [ForeignKey("ma_san_pham")]
         public virtual SanPham sanphams { get; set; }
         public int so_luong { get; set; }
-        public int gia_goc { get; set; }
-        public int gia_khuyen_mai { get; set; }
-
-
     }
 }
