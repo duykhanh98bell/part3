@@ -44,7 +44,7 @@ namespace projectPart3.Controllers
             ViewBag.ma_danh_muc = new SelectList(db.danhmucs, "ma_danh_muc", "ten_danh_muc");
             ViewBag.ma_gia = new SelectList(db.gias, "ma_gia", "ma_gia");
             ViewBag.ma_ncc = new SelectList(db.nhacungcaps, "ma_nha_cung_cap", "ten_nha_cung_cap");
-            ViewBag.SP = db.sanphams.Include(s => s.danhmucs).Include(s => s.gias).Include(s => s.nhacungcaps).ToList();
+            ViewBag.SP = db.gias.ToList();
             return View();
         }
 

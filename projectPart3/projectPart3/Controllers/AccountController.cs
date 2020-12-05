@@ -22,7 +22,7 @@ namespace projectPart3.Controllers
         
         void connectionString()
         {
-            con.ConnectionString = "data source=DESKTOP-FI1F0UB\\MISASME2015;initial catalog=LTQLDB;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
+            con.ConnectionString = "data source=DESKTOP-O9RLMB0;initial catalog=LT;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
 
         }
         [HttpPost]

@@ -145,17 +145,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202011221104281_update ten.cs" />
-    <Compile Include="Migrations\202011221104281_update ten.Designer.cs">
-      <DependentUpon>202011221104281_update ten.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011271602273_ok.cs" />
-    <Compile Include="Migrations\202011271602273_ok.Designer.cs">
-      <DependentUpon>202011271602273_ok.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012031039155_update.cs" />
-    <Compile Include="Migrations\202012031039155_update.Designer.cs">
-      <DependentUpon>202012031039155_update.cs</DependentUpon>
+    <Compile Include="Migrations\202012050926085_update db.cs" />
+    <Compile Include="Migrations\202012050926085_update db.Designer.cs">
+      <DependentUpon>202012050926085_update db.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -396,14 +388,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202011221104281_update ten.resx">
-      <DependentUpon>202011221104281_update ten.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202011271602273_ok.resx">
-      <DependentUpon>202011271602273_ok.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012031039155_update.resx">
-      <DependentUpon>202012031039155_update.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202012050926085_update db.resx">
+      <DependentUpon>202012050926085_update db.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
