@@ -369,6 +369,7 @@
     <Content Include="Views\Cart\bagCart.cshtml" />
     <Content Include="Views\Cart\showCheckout.cshtml" />
     <Content Include="Views\Cart\shoping_success.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
