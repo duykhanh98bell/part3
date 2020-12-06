@@ -1,6 +1,8 @@
 ﻿<!-- Hero Section Begin -->
 @{
     var danhmucs = ViewBag.DanhMuc;
+    var tit = ViewBag.Message;
+    
 }
 <section class="hero hero-normal">
     <div class="container">
@@ -14,7 +16,7 @@
                     <ul>
                         @foreach (var danhmuc in danhmucs)
                         {
-                            <li><a href="#">@danhmuc.ten_danh_muc</a></li>
+                            <li><a href="/Home/ShowProduct/@danhmuc.ma_danh_muc">@danhmuc.ten_danh_muc</a></li>
 
                         }
                     </ul>
@@ -23,14 +25,18 @@
             <div class="col-lg-9">
                 <div class="hero__search">
                     <div class="hero__search__form">
+                        @using (Html.BeginForm())
+                        {
+
                         <form action="#">
                             <div class="hero__search__categories">
-                                All Categories
+                                All Products
                                 <span class="arrow_carrot-down"></span>
                             </div>
-                            <input type="text" placeholder="What do yo u need?">
+                            @Html.TextBox("SearchString")
                             <button type="submit" class="site-btn">SEARCH</button>
                         </form>
+                        }
                     </div>
                     <div class="hero__search__phone">
                         <div class="hero__search__phone__icon">
@@ -42,6 +48,18 @@
                         </div>
                     </div>
                 </div>
+                @if (tit == "Home")
+                {
+                    <div class="hero__item set-bg" data-setbg="Content/img/hero/banner.jpg" style="background-image: url(&quot;img/hero/banner.jpg&quot;); margin-top: 20px;">
+                        <div class="hero__text">
+                            <span>FRUIT FRESH</span>
+                            <h2>Vegetable <br>100% Organic</h2>
+                            <p>Free Pickup and Delivery Available</p>
+                            <a href="#" class="primary-btn">SHOP NOW</a>
+                        </div>
+                    </div>
+                }
+
             </div>
         </div>
     </div>

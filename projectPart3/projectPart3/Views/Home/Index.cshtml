@@ -53,13 +53,12 @@
             @foreach (var item in Model)
             {
             <div class="col-lg-3 col-md-4 col-sm-6 mix @Html.DisplayFor(modelItem => item.danhmucs.ten_danh_muc) fresh-meat">
-                <a href="Home/Detail/@Html.DisplayFor(model=> item.ma_sp)">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="~/content/img/featured/feature-1.jpg">
                             <img src="@Url.Content(item.hinh_anh)" />
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="Home/Detail/@Html.DisplayFor(model=> item.ma_sp)"><i class="fa fa-info"></i></a></li>
                                 <li><a href="/Cart/addToCart/@item.ma_sp"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
@@ -69,7 +68,6 @@
 
                         </div>
                     </div>
-                </a>
             </div>
             }
             

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 using projectPart3.Models;
 
 namespace projectPart3.Controllers
@@ -16,11 +17,49 @@ namespace projectPart3.Controllers
         private LTQLDBContext db = new LTQLDBContext();
 
         // GET: SanPhams
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            var sanphams = db.sanphams.Include(s => s.danhmucs).Include(s => s.gias).Include(s => s.nhacungcaps).ToList();
-            
-            return View(sanphams);
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.TenSortParm = String.IsNullOrEmpty(sortOrder) ? "ten_desc" : "";
+            ViewBag.PriceSortParm = sortOrder == "price" ? "price_desc" : "price";
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
+            var models = db.sanphams.AsQueryable();
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                models = models.Where(s => s.ten_sp.Contains(searchString)
+                                       || s.danhmucs.ten_danh_muc.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "ten_desc":
+                    models = models.OrderByDescending(s => s.ten_sp);
+                    break;
+                case "price":
+                    models = models.OrderBy(s => s.gias.gia_khuyen_mai);
+                    break;
+                case "price_desc":
+                    models = models.OrderByDescending(s => s.gias.gia_khuyen_mai);
+                    break;
+                default:
+                    models = models.OrderBy(s => s.ma_gia);
+                    break;
+            }
+            int pageSize = 6;
+            int pageNumber = (page ?? 1);
+            return View(models.ToPagedList(pageNumber, pageSize));
+
+            return View(models.ToList());
         }
 
         // GET: SanPhams/Details/5
