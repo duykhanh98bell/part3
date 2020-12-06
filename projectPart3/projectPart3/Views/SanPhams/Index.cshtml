@@ -1,4 +1,6 @@
-﻿@model IEnumerable<projectPart3.Models.SanPham>
+﻿@model PagedList.IPagedList<projectPart3.Models.SanPham>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 @{
     ViewBag.Title = "Index";
@@ -10,34 +12,52 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+@using (Html.BeginForm())
+{
+    <p>
+        Tim kiem san pham: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
 <table class="table">
     <tr>
+        <th></th>
         <th>
-            @Html.DisplayNameFor(model => model.danhmucs.ten_danh_muc)
+            @Html.ActionLink("Gia", "Index", new { sortOrder = ViewBag.PriceSortParm })
+        </th>
+        <th></th>
+        <th>
+            @Html.ActionLink("Ten", "Index", new { sortOrder = ViewBag.TenSortParm })
+        </th>
+        <th></th>
+    </tr>
+    <tr>
+        <th>
+            Tên danh mục
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.gias.gia_khuyen_mai)
+            GIá khuyến mãi
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.nhacungcaps.ten_nha_cung_cap)
+            Nhà cung cấp
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ten_sp)
+            Tên sản phẩm
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.trang_thai)
+            Trạng thái
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ghi_chu)
+            Ghi chú
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.xuat_xu)
+            Xuất xứ
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.mo_ta)
+            Mô tả
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.hinh_anh)
+            Hình ảnh
         </th>
         <th></th>
     </tr>
@@ -82,3 +102,8 @@
     }
 
 </table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

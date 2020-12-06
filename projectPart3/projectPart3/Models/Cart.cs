@@ -34,12 +34,29 @@ namespace projectPart3.Models
                 item._shopping_quantity += _quantity;
             }
         }
-        public void update_quantity_shopping(int id, int _quantity)
+        public void update_quantity_shopping(int id, int _quantity = 1)
         {
             var item = items.Find(s => s._shopping_product.ma_sp == id);
             if(item != null)
             {
                 item._shopping_quantity = _quantity;
+            }
+        }
+        public void update_quantity_shopping_detail(SanPham _pro, int _quantity)
+        {
+            var item = items.FirstOrDefault(s => s._shopping_product.ma_sp == _pro.ma_sp);
+            if (item == null)
+            {
+                items.Add(new CartItem
+                {
+                    _shopping_product = _pro,
+                    _shopping_quantity = _quantity
+                });
+
+            }
+            else
+            {
+                item._shopping_quantity += _quantity;
             }
         }
         public double total_money()

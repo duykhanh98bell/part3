@@ -14,6 +14,7 @@ namespace projectPart3.Controllers
         // GET: Cart
         public Cart getCart()
         {
+            
             Cart cart = Session["Cart"] as Cart;
             if(cart == null || Session["Cart"] == null)
             {
@@ -34,6 +35,7 @@ namespace projectPart3.Controllers
         }
         public ActionResult showToCart()
         {
+            ViewBag.Message = "Cart";
             ViewBag.DanhMuc = db.danhmucs.ToList();
             if (Session["Cart"] == null)
             {
@@ -41,6 +43,17 @@ namespace projectPart3.Controllers
             }
             Cart cart = Session["Cart"] as Cart;
             return View(cart);
+        }
+        public ActionResult updateDetailCart(FormCollection form)
+        {
+            int id_pro = int.Parse(form["id_product"]);
+            int quantity = int.Parse(form["quantity"]);
+            var pro = db.sanphams.SingleOrDefault(s => s.ma_sp == id_pro);
+            if (pro != null)
+            {
+                getCart().update_quantity_shopping_detail(pro, quantity);
+            }
+            return RedirectToAction("showToCart", "Cart");
         }
         public ActionResult updateCart(FormCollection form)
         {
