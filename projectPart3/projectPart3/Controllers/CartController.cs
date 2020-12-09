@@ -76,12 +76,23 @@ namespace projectPart3.Controllers
         public PartialViewResult bagCart()
         {
             int total_item = 0;
+            
             Cart cart = Session["Cart"] as Cart;
             if (cart != null)
                 total_item = cart.totalQuantityCart();
                 ViewBag.QuantityCart = total_item;
                 return PartialView("bagCart");
         }
+        public PartialViewResult total_money()
+        {
+            double money = 0;
+            Cart cart = Session["Cart"] as Cart;
+            if (cart != null)
+                money = cart.total_money();
+            ViewBag.Total = money;
+            return PartialView("total_money");
+        }
+
         public ActionResult shoping_success()
         {
             ViewBag.DanhMuc = db.danhmucs.ToList();
@@ -117,6 +128,17 @@ namespace projectPart3.Controllers
             {
                 return Content("Error Checkout.");
             }
+        }
+        public ActionResult ShowCheckout()
+        {
+            ViewBag.Message = "Checkout";
+            ViewBag.DanhMuc = db.danhmucs.ToList();
+            if (Session["Cart"] == null)
+            {
+                return RedirectToAction("showToCart", "Cart");
+            }
+            Cart cart = Session["Cart"] as Cart;
+            return View(cart);
         }
      
     }

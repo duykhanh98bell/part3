@@ -36,7 +36,14 @@
                                 </div>
                             </div>
                         </div>
-                        <input type="submit" class="primary-btn" name="name" value="ADD TO CARD" />
+                        @if (product.trang_thai == true)
+                        {
+                            <input type="submit" class="primary-btn" name="name" value="ADD TO CARD" />
+                        }
+                        else
+                        {
+                            <p class="primary-btn">ADD TO CARD</p>
+                        }
                         <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
                         <ul>
                             <li><b>Trang thai</b> <span>@(product.trang_thai ? "Còn hàng" : "Hết Hàng")</span></li>

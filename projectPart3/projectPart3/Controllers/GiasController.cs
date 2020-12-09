@@ -50,9 +50,14 @@ namespace projectPart3.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.gias.Add(gia);
+                db.gias.Add(new Gia
+                {
+                    gia_goc = gia.gia_goc,
+                    gia_khuyen_mai = gia.gia_khuyen_mai,
+                    ngay_ap_dung = DateTime.Now
+                });
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index");   
             }
 
             return View(gia);

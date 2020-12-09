@@ -6,6 +6,7 @@
         <div class="sidebar__item">
             <h4>Department</h4>
             <ul>
+                <li><a href="/Home/ShowProduct/">Tất cả</a></li>
                 @foreach (var danhmuc in danhmucs)
                 {
                     <li><a href="/Home/ShowProduct/@danhmuc.ma_danh_muc">@danhmuc.ten_danh_muc</a></li>

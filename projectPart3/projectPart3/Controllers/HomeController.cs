@@ -95,62 +95,6 @@ namespace projectPart3.Controllers
             }
             
 
-            /*int page = int.Parse(Request.QueryString["page"]);*/
-            int pageSize = 12;
-            ViewBag.Message = "Shop"+ Request.QueryString["category"];
-            int totalRecord = db.sanphams.Count();
-            /*int page = int.Parse(Request.QueryString["page"]);*/
-
-            if (Request.QueryString["category"] != null)
-            {
-                int id_category = int.Parse(Request.QueryString["category"]);
-                
-                ViewBag.sanphams = db.sanphams
-               .Where(x => x.ma_danh_muc == id_category)
-               .Include(s => s.danhmucs)
-               .Include(s => s.gias)
-               .Include(s => s.nhacungcaps)
-               .OrderByDescending(s => s.ma_sp)
-               /*.Skip((page - 1) * pageSize)
-               .Take(pageSize)*/
-               .ToList();
-                ViewBag.countPro = db.sanphams
-                .Where(x => x.ma_danh_muc == id_category)
-                .Count();
-            }
-            else
-            {
-                ViewBag.sanphams = db.sanphams
-                 .Include(s => s.danhmucs)
-                 .Include(s => s.gias)
-                 .Include(s => s.nhacungcaps)
-                 .OrderByDescending(s => s.ma_sp)
-                 /*.Skip((page - 1) * pageSize)
-                 .Take(pageSize)*/
-                 .ToList();
-                ViewBag.countPro = db.sanphams
-                .Count();
-            }
-            
-
-            ViewBag.DanhMuc = db.danhmucs.ToList();
-
-            ViewBag.TakeProduct = db.sanphams.ToList();
-            /*ViewBag.total = totalRecord;
-            ViewBag.page = page;
-
-            int maxPage = 5;
-            int totalPage = 0;
-
-            totalPage = (int)Math.Ceiling((double)(totalRecord / pageSize));
-            ViewBag.totalPage = totalPage + 1;
-            ViewBag.maxPage = maxPage;
-            ViewBag.first = 1;
-            ViewBag.last = totalPage;
-            ViewBag.next = page + 1;
-            ViewBag.prev = page - 1;*/
-            
-            return View();
         }
         public ActionResult Detail(long id)
         {

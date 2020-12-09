@@ -55,11 +55,10 @@ namespace projectPart3.Controllers
                     models = models.OrderBy(s => s.ma_gia);
                     break;
             }
-            int pageSize = 6;
+            int pageSize = 10;
             int pageNumber = (page ?? 1);
             return View(models.ToPagedList(pageNumber, pageSize));
 
-            return View(models.ToList());
         }
 
         // GET: SanPhams/Details/5
