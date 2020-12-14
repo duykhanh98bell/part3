@@ -142,32 +142,27 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\ChiTietHoaDonsController.cs" />
     <Compile Include="Controllers\ConnecDB.cs" />
     <Compile Include="Controllers\DanhMucsController.cs" />
     <Compile Include="Controllers\GiasController.cs" />
+    <Compile Include="Controllers\HoaDonsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KHACHController.cs" />
+    <Compile Include="Controllers\KHACHesController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NhaCungCapsController.cs" />
     <Compile Include="Controllers\SanPhamsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202012101607012_add_khach.cs" />
-    <Compile Include="Migrations\202012101607012_add_khach.Designer.cs">
-      <DependentUpon>202012101607012_add_khach.cs</DependentUpon>
+    <Compile Include="Migrations\202012140844307_updb.cs" />
+    <Compile Include="Migrations\202012140844307_updb.Designer.cs">
+      <DependentUpon>202012140844307_updb.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202012110655072_delete_admin.cs" />
-    <Compile Include="Migrations\202012110655072_delete_admin.Designer.cs">
-      <DependentUpon>202012110655072_delete_admin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012110810259_update_KHACH.cs" />
-    <Compile Include="Migrations\202012110810259_update_KHACH.Designer.cs">
-      <DependentUpon>202012110810259_update_KHACH.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012121531283_update23456.cs" />
-    <Compile Include="Migrations\202012121531283_update23456.Designer.cs">
-      <DependentUpon>202012121531283_update23456.cs</DependentUpon>
+    <Compile Include="Migrations\202012140945202_updata foreignkey.cs" />
+    <Compile Include="Migrations\202012140945202_updata foreignkey.Designer.cs">
+      <DependentUpon>202012140945202_updata foreignkey.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -392,6 +387,18 @@
     <Content Include="Views\Shared\_LayoutLOGINkhach.cshtml" />
     <Content Include="Views\KHACH\DangKy.cshtml" />
     <Content Include="Views\KHACH\DangNhap.cshtml" />
+    <Content Include="Views\HoaDons\Create.cshtml" />
+    <Content Include="Views\HoaDons\Delete.cshtml" />
+    <Content Include="Views\HoaDons\Details.cshtml" />
+    <Content Include="Views\HoaDons\Edit.cshtml" />
+    <Content Include="Views\HoaDons\Index.cshtml" />
+    <Content Include="Views\KHACHes\Delete.cshtml" />
+    <Content Include="Views\KHACHes\Index.cshtml" />
+    <Content Include="Views\ChiTietHoaDons\Create.cshtml" />
+    <Content Include="Views\ChiTietHoaDons\Delete.cshtml" />
+    <Content Include="Views\ChiTietHoaDons\Details.cshtml" />
+    <Content Include="Views\ChiTietHoaDons\Edit.cshtml" />
+    <Content Include="Views\ChiTietHoaDons\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -411,17 +418,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202012101607012_add_khach.resx">
-      <DependentUpon>202012101607012_add_khach.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202012140844307_updb.resx">
+      <DependentUpon>202012140844307_updb.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012110655072_delete_admin.resx">
-      <DependentUpon>202012110655072_delete_admin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012110810259_update_KHACH.resx">
-      <DependentUpon>202012110810259_update_KHACH.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012121531283_update23456.resx">
-      <DependentUpon>202012121531283_update23456.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202012140945202_updata foreignkey.resx">
+      <DependentUpon>202012140945202_updata foreignkey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

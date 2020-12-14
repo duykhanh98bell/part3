@@ -30,7 +30,9 @@ namespace projectPart3.Controllers
                 if (kiem_tra_tai_khoan != null)
                 {
                     Session["idKhach"] = kiem_tra_tai_khoan.FirstOrDefault().id_Khach;
-                    Session["tenKH"] = kiem_tra_tai_khoan.FirstOrDefault().Email;
+                    Session["client"] = kiem_tra_tai_khoan.FirstOrDefault().Email;
+                    Session["firstName"] = kiem_tra_tai_khoan.FirstOrDefault().FirstName;
+                    Session["lastName"] = kiem_tra_tai_khoan.FirstOrDefault().LastName;
                     return RedirectToAction("Index", "Home");
                 }
                 else

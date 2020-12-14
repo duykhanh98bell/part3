@@ -101,8 +101,7 @@ namespace projectPart3.Controllers
         public ActionResult checkOut(FormCollection form)
         {
             ViewBag.DanhMuc = db.danhmucs.ToList();
-            try
-            {
+            
                 Cart cart = Session["Cart"] as Cart;
                 HoaDon _order = new HoaDon();
                 _order.ngay_tao = DateTime.Now;
@@ -117,17 +116,12 @@ namespace projectPart3.Controllers
                     _order_detail.ma_hd = _order.ma_hd;
                     _order_detail.ma_san_pham = item._shopping_product.ma_sp;
                     _order_detail.so_luong = item._shopping_quantity;
-                    /*_order_detail.SanPham.ma_sp = item._shopping_product.ma_sp;*/
                     db.chitiethoadons.Add(_order_detail);
                 }
                 db.SaveChanges();
                 cart.clearCart();
                 return RedirectToAction("shoping_success", "Cart");
-            }
-            catch
-            {
-                return Content("Error Checkout.");
-            }
+           
         }
         public ActionResult ShowCheckout()
         {

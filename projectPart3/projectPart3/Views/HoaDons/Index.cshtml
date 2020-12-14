@@ -1,0 +1,63 @@
+﻿@model IEnumerable<projectPart3.Models.HoaDon>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+@if (Session["tenKH"] != null)
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.khachs.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tong_tien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.trang_thai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ghi_chu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ngay_tao)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.khachs.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tong_tien)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.trang_thai)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ghi_chu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ngay_tao)
+                </td>
+                <td>
+                    <a href="/ChiTietHoaDons/Index/@item.ma_hd">Xem chi tiet</a>
+                    <a href="/KHACHes/Details/@item.ma_kh">Xem khách </a>
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+else
+{
+    <li>@Html.ActionLink("Đăng ký", "Register", "Login")</li>
+    <li>@Html.ActionLink("Đăng nhập", "Login", "Login")</li>
+}

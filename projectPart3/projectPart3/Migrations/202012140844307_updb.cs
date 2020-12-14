@@ -3,7 +3,7 @@ namespace projectPart3.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class update_KHACH : DbMigration
+    public partial class updb : DbMigration
     {
         public override void Up()
         {

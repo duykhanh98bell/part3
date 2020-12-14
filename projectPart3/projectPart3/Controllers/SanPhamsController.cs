@@ -149,42 +149,33 @@ namespace projectPart3.Controllers
         {
             if (ModelState.IsValid)
             {
-                /*db.Entry(sanPham).State = EntityState.Modified;
-                db.SaveChanges();*/
-                try
-                {
-                    if (hinh_anh.ContentLength > 0)
-                    {
+                
+                
+                    
                         string _FileName = Path.GetFileName(hinh_anh.FileName);
                         string _path = Path.Combine(Server.MapPath("~/Images"), _FileName);
                         hinh_anh.SaveAs(_path);
-                        db.Entry(new SanPham
-                        {
-                            ma_sp = sanPham.ma_sp,
-                            ten_sp = sanPham.ten_sp,
-                            ma_gia = sanPham.ma_gia,
-                            ma_ncc = sanPham.ma_ncc,
-                            ma_danh_muc = sanPham.ma_danh_muc,
-                            trang_thai = sanPham.trang_thai,
-                            ghi_chu = sanPham.ghi_chu,
-                            xuat_xu = sanPham.xuat_xu,
-                            mo_ta = sanPham.mo_ta,
-                            hinh_anh = "/Images/" + hinh_anh.FileName
-                        }).State = EntityState.Modified;
+                var sp = new SanPham
+                {
+                    ma_sp = sanPham.ma_sp,
+                    ten_sp = sanPham.ten_sp,
+                    ma_gia = sanPham.ma_gia,
+                    ma_ncc = sanPham.ma_ncc,
+                    ma_danh_muc = sanPham.ma_danh_muc,
+                    trang_thai = sanPham.trang_thai,
+                    ghi_chu = sanPham.ghi_chu,
+                    xuat_xu = sanPham.xuat_xu,
+                    mo_ta = sanPham.mo_ta,
+                    hinh_anh = "/Images/" + hinh_anh.FileName
+                };
+                        db.Entry(sp).State = EntityState.Modified;
+                        db.SaveChanges();
                         ViewBag.Message = "Update Successfully!!";
                         db.SaveChanges();
-                        return RedirectToAction("Index");
-                    }
-                    /*else
-                    {
-                        db.Entry(sanPham).State = EntityState.Modified;
-                        db.SaveChanges();
-                    }*/
-                }
-                catch
-                {
-                    ViewBag.Message = "Update Fail, Choose Image!!";
-                }
+                    
+                    
+                    
+                    
                 
 
                 return RedirectToAction("Index");

@@ -87,7 +87,10 @@
                                     <ul class="product__item__pic__hover">
                                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                         <li><a href="/Home/Detail/@item.ma_sp"><i class="fa fa-info"></i></a></li>
-                                        <li><a href="/Cart/addToCart/@item.ma_sp"><i class="fa fa-shopping-cart"></i></a></li>
+                                        @if (item.trang_thai == true)
+                                        {
+                                            <li><a href="/Cart/addToCart/@item.ma_sp"><i class="fa fa-shopping-cart"></i></a></li>
+                                        }
                                     </ul>
                                 </div>
                                 <div class="product__item__text">

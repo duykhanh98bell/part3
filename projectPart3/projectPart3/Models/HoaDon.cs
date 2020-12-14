@@ -21,6 +21,6 @@ namespace projectPart3.Models
         public DateTime ngay_tao { get; set; }
 
         [ForeignKey("ma_kh")]
-        public virtual KhachHang khachhangs { get; set; }
+        public virtual KHACH khachs { get; set; }
     }
 }

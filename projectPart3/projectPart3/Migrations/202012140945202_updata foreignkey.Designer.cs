@@ -7,13 +7,13 @@ namespace projectPart3.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class update_KHACH : IMigrationMetadata
+    public sealed partial class updataforeignkey : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(update_KHACH));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(updataforeignkey));
         
         string IMigrationMetadata.Id
         {
-            get { return "202012110810259_update_KHACH"; }
+            get { return "202012140945202_updata foreignkey"; }
         }
         
         string IMigrationMetadata.Source
