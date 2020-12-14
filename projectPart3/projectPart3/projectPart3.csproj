@@ -46,10 +46,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="EPPlus.Core, Version=1.5.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\EPPlus.Core.1.5.4\lib\net46\EPPlus.Core.dll</HintPath>
@@ -141,27 +141,41 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\ConnecDB.cs" />
     <Compile Include="Controllers\DanhMucsController.cs" />
     <Compile Include="Controllers\GiasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KHACHController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NhaCungCapsController.cs" />
     <Compile Include="Controllers\SanPhamsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202012050926085_update db.cs" />
-    <Compile Include="Migrations\202012050926085_update db.Designer.cs">
-      <DependentUpon>202012050926085_update db.cs</DependentUpon>
+    <Compile Include="Migrations\202012101607012_add_khach.cs" />
+    <Compile Include="Migrations\202012101607012_add_khach.Designer.cs">
+      <DependentUpon>202012101607012_add_khach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012110655072_delete_admin.cs" />
+    <Compile Include="Migrations\202012110655072_delete_admin.Designer.cs">
+      <DependentUpon>202012110655072_delete_admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012110810259_update_KHACH.cs" />
+    <Compile Include="Migrations\202012110810259_update_KHACH.Designer.cs">
+      <DependentUpon>202012110810259_update_KHACH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012121531283_update23456.cs" />
+    <Compile Include="Migrations\202012121531283_update23456.Designer.cs">
+      <DependentUpon>202012121531283_update23456.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\ChiTietHoaDon.cs" />
     <Compile Include="Models\DanhMuc.cs" />
     <Compile Include="Models\Gia.cs" />
     <Compile Include="Models\HoaDon.cs" />
+    <Compile Include="Models\KHACH.cs" />
     <Compile Include="Models\KhachHang.cs" />
     <Compile Include="Models\LTQLDBContext.cs" />
     <Compile Include="Models\NhaCungCap.cs" />
@@ -362,10 +376,6 @@
     <Content Include="Views\Shared\Footer.cshtml" />
     <Content Include="Views\Shared\LeftMenu.cshtml" />
     <Content Include="Views\Shared\_LayoutClientShop.cshtml" />
-    <Content Include="Views\Shared\_LayoutLogin.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\success.cshtml" />
-    <Content Include="Views\Account\Error.cshtml" />
     <Content Include="Views\SanPhams\Create.cshtml" />
     <Content Include="Views\SanPhams\Delete.cshtml" />
     <Content Include="Views\SanPhams\Details.cshtml" />
@@ -376,8 +386,12 @@
     <Content Include="Views\Cart\bagCart.cshtml" />
     <Content Include="Views\Cart\showCheckout.cshtml" />
     <Content Include="Views\Cart\shoping_success.cshtml" />
-    <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Cart\total_money.cshtml" />
+    <Content Include="Views\Login\Register.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Shared\_LayoutLOGINkhach.cshtml" />
+    <Content Include="Views\KHACH\DangKy.cshtml" />
+    <Content Include="Views\KHACH\DangNhap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -397,8 +411,17 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202012050926085_update db.resx">
-      <DependentUpon>202012050926085_update db.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202012101607012_add_khach.resx">
+      <DependentUpon>202012101607012_add_khach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012110655072_delete_admin.resx">
+      <DependentUpon>202012110655072_delete_admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012110810259_update_KHACH.resx">
+      <DependentUpon>202012110810259_update_KHACH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012121531283_update23456.resx">
+      <DependentUpon>202012121531283_update23456.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

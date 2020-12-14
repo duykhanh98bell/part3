@@ -8,14 +8,19 @@ namespace projectPart3.Models
     {
         [Key]
         public int ma_khach_hang { get; set; }
-        
-        public string ten_khach_hang { get; set; }
-        public int gioi_tinh { get; set; }
-        public string email { get; set; }
-        public string password { get; set; }
-        public string dien_thoai { get; set; }
 
-        [StringLength(255)]
-        public string dia_chi { get; set; }
+        [Required(ErrorMessage = "Email is Required")]
+        [RegularExpression(@"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}")]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "User Name is Required")]
+        public string UserName { get; set; }
+
+        [Required(ErrorMessage = "PassWord is Required")]
+        public string PassWord { get; set; }
+
+        [Compare("PassWord",ErrorMessage = "Please Confirm Your Password.")]
+        [DataType(DataType.Password)]
+        public string ComfirmPassWord { get; set; }
     }
 }

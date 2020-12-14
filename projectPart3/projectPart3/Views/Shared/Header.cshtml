@@ -69,7 +69,7 @@
                 <div class="col-lg-6">
                     <div class="header__top__left">
                         <ul>
-                            <li><i class="fa fa-envelope"></i> duykhanh98bell@gmail.com</li>
+                            <li><i class="fa fa-envelope"></i> @Session["tenKH"] </li>
                             <li>Miễn ship bán kính 1km</li>
                         </ul>
                     </div>
@@ -92,7 +92,16 @@
                             </ul>
                         </div>
                         <div class="header__top__right__auth">
-                            <a href="#"><i class="fa fa-user"></i> Login</a>
+                            @if (Session["tenKH"] != null)
+                            {
+                                <a><p style="color:black;margin-top:15px;">Hello @Session["tenKH"]</p></a>
+                                <a>@Html.ActionLink("Thoát", "Logout", "KHACH")</a>
+                            }
+                            else
+                            {
+                                <a href="@Url.Action("DangNhap", "KHACH")"><i class="fa fa-user"></i>Đăng nhập</a>
+                            <a href="@Url.Action("DangKy", "KHACH")"><i class="fa fa-user"></i>Đăng Ký</a>
+                            }
                         </div>
                     </div>
                 </div>

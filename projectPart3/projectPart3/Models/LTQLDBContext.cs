@@ -19,7 +19,7 @@ namespace projectPart3.Models
         public virtual DbSet<DanhMuc> danhmucs { get; set; }
         public virtual DbSet<Gia> gias { get; set; }
         public virtual DbSet<SanPham> sanphams { get; set; }
-        public virtual DbSet<Admin> admins { get; set; }
+        public virtual DbSet<KHACH> khachs { get; set; }
 
 
 

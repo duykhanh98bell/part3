@@ -4,31 +4,40 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@if (Session["tenKH"] != null)
+{
+    <h2>Index</h2>
 
-<h2>Index</h2>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ten_danh_muc)
+            </th>
+            <th></th>
+        </tr>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ten_danh_muc)
-        </th>
-        <th></th>
-    </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ten_danh_muc)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ma_danh_muc }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ma_danh_muc }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ma_danh_muc })
+                </td>
+            </tr>
+        }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ten_danh_muc)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ma_danh_muc }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ma_danh_muc }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ma_danh_muc })
-        </td>
-    </tr>
+    </table>
+}
+else
+{
+    <li>@Html.ActionLink("Đăng ký", "Register", "Login")</li>
+    <li>@Html.ActionLink("Đăng nhập", "Login", "Login")</li>
 }
 
-</table>

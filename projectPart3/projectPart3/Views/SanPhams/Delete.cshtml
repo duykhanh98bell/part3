@@ -4,93 +4,104 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+@if (Session["tenKH"] != null)
+{
+    <h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>SanPham</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.danhmucs.ten_danh_muc)
-        </dt>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>SanPham</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.danhmucs.ten_danh_muc)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.danhmucs.ten_danh_muc)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.danhmucs.ten_danh_muc)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.gias.ma_gia)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.gias.ma_gia)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.gias.ma_gia)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.gias.ma_gia)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.nhacungcaps.ten_nha_cung_cap)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.nhacungcaps.ten_nha_cung_cap)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.nhacungcaps.ten_nha_cung_cap)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.nhacungcaps.ten_nha_cung_cap)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ten_sp)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.ten_sp)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ten_sp)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.ten_sp)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.trang_thai)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.trang_thai)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.trang_thai)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.trang_thai)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ghi_chu)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.ghi_chu)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ghi_chu)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.ghi_chu)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.xuat_xu)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.xuat_xu)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.xuat_xu)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.xuat_xu)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.mo_ta)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.mo_ta)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.mo_ta)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.mo_ta)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.hinh_anh)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.hinh_anh)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.hinh_anh)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.hinh_anh)
+            </dd>
 
-    </dl>
+        </dl>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
-</div>
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+}
+else
+{
+    <li>@Html.ActionLink("Đăng ký", "Register", "Login")</li>
+    <li>@Html.ActionLink("Đăng nhập", "Login", "Login")</li>
+}
+
+
