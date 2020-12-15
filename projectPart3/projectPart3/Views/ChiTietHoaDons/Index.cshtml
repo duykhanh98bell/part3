@@ -12,7 +12,10 @@
     <table class="table">
         <tr>
             <th>
-                Đơn giá
+                Giá gốc
+            </th>
+            <th>
+                Giá phải trả
             </th>
             <th>
                 Tên sản phẩm
@@ -20,22 +23,28 @@
             <th>
                 Số lượng
             </th>
-            <th></th>
+            <th>Tổng</th>
         </tr>
 
         @foreach (var hoadon in hoadons)
         {
-            <tr>
-                <td>
-                    @hoadon.sanphams.gias.gia_khuyen_mai
-                </td>
-                <td>
-                    @hoadon.sanphams.ten_sp
-                </td>
-                <td>
-                    @hoadon.so_luong
-                </td>
-            </tr>
+    <tr>
+        <td>
+            @hoadon.gia_goc
+        </td>
+        <td>
+            @hoadon.gia_khuyen_mai
+        </td>
+        <td>
+            @hoadon.sanphams.ten_sp
+        </td>
+        <td>
+            @hoadon.so_luong
+        </td>
+        <td>
+            @(hoadon.so_luong * hoadon.gia_khuyen_mai) Đ
+        </td>
+    </tr>
         }
 
     </table>

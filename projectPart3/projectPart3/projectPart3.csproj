@@ -156,13 +156,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202012140844307_updb.cs" />
-    <Compile Include="Migrations\202012140844307_updb.Designer.cs">
-      <DependentUpon>202012140844307_updb.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012140945202_updata foreignkey.cs" />
-    <Compile Include="Migrations\202012140945202_updata foreignkey.Designer.cs">
-      <DependentUpon>202012140945202_updata foreignkey.cs</DependentUpon>
+    <Compile Include="Migrations\202012150535220_edit order-detail.cs" />
+    <Compile Include="Migrations\202012150535220_edit order-detail.Designer.cs">
+      <DependentUpon>202012150535220_edit order-detail.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -418,11 +414,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202012140844307_updb.resx">
-      <DependentUpon>202012140844307_updb.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012140945202_updata foreignkey.resx">
-      <DependentUpon>202012140945202_updata foreignkey.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202012150535220_edit order-detail.resx">
+      <DependentUpon>202012150535220_edit order-detail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
