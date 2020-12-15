@@ -7,6 +7,7 @@ namespace projectPart3.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
+<<<<<<< HEAD
 <<<<<<< HEAD:projectPart3/projectPart3/Migrations/202012141256378_addnew.Designer.cs
     public sealed partial class addnew : IMigrationMetadata
     {
@@ -16,6 +17,8 @@ namespace projectPart3.Migrations
         {
             get { return "202012141256378_addnew"; }
 =======
+=======
+>>>>>>> ba6980ea3110cb240cf276a15f6ad2018f92e418
     public sealed partial class editorderdetail : IMigrationMetadata
     {
         private readonly ResourceManager Resources = new ResourceManager(typeof(editorderdetail));
@@ -23,7 +26,10 @@ namespace projectPart3.Migrations
         string IMigrationMetadata.Id
         {
             get { return "202012150535220_edit order-detail"; }
+<<<<<<< HEAD
 >>>>>>> ba6980ea3110cb240cf276a15f6ad2018f92e418:projectPart3/projectPart3/Migrations/202012150535220_edit order-detail.Designer.cs
+=======
+>>>>>>> ba6980ea3110cb240cf276a15f6ad2018f92e418
         }
         
         string IMigrationMetadata.Source
