@@ -156,13 +156,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202012140844307_updb.cs" />
-    <Compile Include="Migrations\202012140844307_updb.Designer.cs">
-      <DependentUpon>202012140844307_updb.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012140945202_updata foreignkey.cs" />
-    <Compile Include="Migrations\202012140945202_updata foreignkey.Designer.cs">
-      <DependentUpon>202012140945202_updata foreignkey.cs</DependentUpon>
+    <Compile Include="Migrations\202012141256378_addnew.cs" />
+    <Compile Include="Migrations\202012141256378_addnew.Designer.cs">
+      <DependentUpon>202012141256378_addnew.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -399,6 +395,8 @@
     <Content Include="Views\ChiTietHoaDons\Details.cshtml" />
     <Content Include="Views\ChiTietHoaDons\Edit.cshtml" />
     <Content Include="Views\ChiTietHoaDons\Index.cshtml" />
+    <Content Include="Views\Login\Delete.cshtml" />
+    <Content Include="Views\Login\list.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -418,11 +416,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202012140844307_updb.resx">
-      <DependentUpon>202012140844307_updb.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012140945202_updata foreignkey.resx">
-      <DependentUpon>202012140945202_updata foreignkey.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202012141256378_addnew.resx">
+      <DependentUpon>202012141256378_addnew.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

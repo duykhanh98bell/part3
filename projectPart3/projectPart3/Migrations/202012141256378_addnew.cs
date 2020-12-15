@@ -3,7 +3,7 @@ namespace projectPart3.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class updataforeignkey : DbMigration
+    public partial class addnew : DbMigration
     {
         public override void Up()
         {

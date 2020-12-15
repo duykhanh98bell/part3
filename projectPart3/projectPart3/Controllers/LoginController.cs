@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Web;
@@ -15,8 +16,41 @@ namespace projectPart3.Controllers
         
         private static object md5;
 
+      public ActionResult list()
+        {
+            ViewBag.listKhach = db.khachhangs.ToList();
+            return View(db.khachhangs.ToList());
+        }
+
+        // GET: 
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            KhachHang kh = db.khachhangs.Find(id);
+            if (kh == null)
+            {
+                return HttpNotFound();
+            }
+            return View("Delete");
+        }
+
+        // POST: 
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            KhachHang kh = db.khachhangs.Find(id);
+            db.khachhangs.Remove(kh);
+            db.SaveChanges();
+            return RedirectToAction("list");
+        }
+
+        
         // GET: Login
-      public ActionResult Login()
+        public ActionResult Login()
         {
             return View();
         }
@@ -29,7 +63,9 @@ namespace projectPart3.Controllers
             {
                 var ma_hoa_du_lieu = GETMD5(password);
                 var kiem_tra_tai_khoan = db.khachhangs.Where(s => s.Email.Equals(email) && s.PassWord.Equals(ma_hoa_du_lieu)).ToList();
-                if(kiem_tra_tai_khoan != null)
+                /*ViewBag.LoginError = kiem_tra_tai_khoan;
+                return RedirectToAction("Login", "Login");*/
+                if (kiem_tra_tai_khoan.Count() > 0)
                 {
                     Session["idKhachHang"] = kiem_tra_tai_khoan.FirstOrDefault().ma_khach_hang;
                     Session["tenKH"] = kiem_tra_tai_khoan.FirstOrDefault().UserName;
@@ -38,7 +74,7 @@ namespace projectPart3.Controllers
                 else
                 {
                     ViewBag.LoginError = "Đăng nhập không thành công";
-                    return RedirectToAction("Login");
+                    return RedirectToAction("Login", "Login");
                 }
             }
             return View();

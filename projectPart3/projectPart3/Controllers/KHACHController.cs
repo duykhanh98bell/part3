@@ -27,7 +27,7 @@ namespace projectPart3.Controllers
             {
                 var ma_hoa_du_lieu = GETMD5(password);
                 var kiem_tra_tai_khoan = db.khachs.Where(s => s.Email.Equals(email) && s.PassWord.Equals(ma_hoa_du_lieu)).ToList();
-                if (kiem_tra_tai_khoan != null)
+                if (kiem_tra_tai_khoan.Count() > 0)
                 {
                     Session["idKhach"] = kiem_tra_tai_khoan.FirstOrDefault().id_Khach;
                     Session["client"] = kiem_tra_tai_khoan.FirstOrDefault().Email;
