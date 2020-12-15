@@ -115,7 +115,9 @@ namespace projectPart3.Controllers
                     ChiTietHoaDon _order_detail = new ChiTietHoaDon();
                     _order_detail.ma_hd = _order.ma_hd;
                     _order_detail.ma_san_pham = item._shopping_product.ma_sp;
-                    _order_detail.so_luong = item._shopping_quantity;
+                    _order_detail.gia_goc = item._shopping_product.gias.gia_goc;
+                    _order_detail.gia_khuyen_mai = item._shopping_product.gias.gia_khuyen_mai;
+                     _order_detail.so_luong = item._shopping_quantity;
                     db.chitiethoadons.Add(_order_detail);
                 }
                 db.SaveChanges();

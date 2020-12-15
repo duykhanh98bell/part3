@@ -156,9 +156,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Migrations\202012141256378_addnew.cs" />
     <Compile Include="Migrations\202012141256378_addnew.Designer.cs">
       <DependentUpon>202012141256378_addnew.cs</DependentUpon>
+=======
+    <Compile Include="Migrations\202012150535220_edit order-detail.cs" />
+    <Compile Include="Migrations\202012150535220_edit order-detail.Designer.cs">
+      <DependentUpon>202012150535220_edit order-detail.cs</DependentUpon>
+>>>>>>> ba6980ea3110cb240cf276a15f6ad2018f92e418
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -416,8 +422,13 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <EmbeddedResource Include="Migrations\202012141256378_addnew.resx">
       <DependentUpon>202012141256378_addnew.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="Migrations\202012150535220_edit order-detail.resx">
+      <DependentUpon>202012150535220_edit order-detail.cs</DependentUpon>
+>>>>>>> ba6980ea3110cb240cf276a15f6ad2018f92e418
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
